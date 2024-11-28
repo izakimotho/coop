@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:17.1
+    environment:
+    - POSTGRES_DB=coop
+    - POSTGRES_USER=administrator
+    - POSTGRES_PASSWORD=RootL3g3ndary++!
+    ports:
+    - 5433:5432
