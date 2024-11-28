@@ -9,7 +9,7 @@ spring:
     username: administrator
     password: RootL3g3ndary++!
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/coop}
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/cop}
     username: ${JDBC_DATABASE_USERNAME:administrator}
     password: ${JDBC_DATABASE_PASSWORD:RootL3g3ndary++!}
     hikari:
@@ -53,13 +53,18 @@ server:
     context-path: /api
   port: '9093'
 
+jwt:
+  secret: 00B6438ACB74D023B6D80FCB962E92FC
 
-application:
-  security:
-    jwt:
-      secret-key: 586B633834416E396D7436753879382F423F4428482B4C6250655367566B5970
-      expiration: 900000 #  15 min in ms
-      cookie-name: jwt-cookie
-      refresh-token:
-        expiration: 1296000000 # 15 days in ms
-        cookie-name: refresh-jwt-cookie
+logging:
+  level:
+    org:
+      hibernate: WARN
+      springframework:
+        web: WARN
+    root: WARN
+  file:
+    name: myapp.log
+    max-history: '30'
+    max-size: 10MB
+

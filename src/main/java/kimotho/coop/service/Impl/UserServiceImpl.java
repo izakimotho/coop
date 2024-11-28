@@ -70,15 +70,15 @@ public class UserServiceImpl implements UserService {
         user.setPassword(userDTO.getPassword());
         return user;
     }
-
+    @Override
     public boolean usernameExists(final String username) {
         return userRepository.existsByUsernameIgnoreCase(username);
     }
-
+    @Override
     public boolean emailExists(final String email) {
         return userRepository.existsByEmailIgnoreCase(email);
     }
-
+    @Override
     public ReferencedWarning getReferencedWarning(final Long id) {
         final ReferencedWarning referencedWarning = new ReferencedWarning();
         final User user = userRepository.findById(id)

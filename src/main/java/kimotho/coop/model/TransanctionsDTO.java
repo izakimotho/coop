@@ -1,6 +1,8 @@
 package kimotho.coop.model;
 
 import jakarta.validation.constraints.Size;
+
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import kimotho.coop.enums.TranactionStatus;
@@ -21,8 +23,7 @@ public class TransanctionsDTO {
     @Size(max = 255)
     private String transanctionDate;
 
-    @Size(max = 255)
-    private double amount;
+    BigDecimal amount;
 
     private TransanctionType transanctionType=TransanctionType.TRANSFER;
 

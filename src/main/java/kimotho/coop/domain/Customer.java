@@ -7,6 +7,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.math.BigDecimal;
 import java.util.Set;
 import java.util.UUID;
 import lombok.Getter;
@@ -24,8 +26,8 @@ public class Customer extends BaseEntity {
     @Column
     private String phonenumber;
 
-    @Column
-    private String accountBalance;
+    @Column(columnDefinition = "NUMERIC(10,2)")
+    private BigDecimal  accountBalance;
 
     @Column
     private String notes;

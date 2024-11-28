@@ -15,12 +15,15 @@ import org.springframework.stereotype.Service;
 
 public interface UserService {
 
-    public List<UserDTO> findAll() ;
+     List<UserDTO> findAll() ;
 
-    public UserDTO get(final Long id);
-    public Long create(final UserDTO userDTO);
-    public void update(final Long id, final UserDTO userDTO) ;
+     UserDTO get(final Long id);
+     Long create(final UserDTO userDTO);
+     void update(final Long id, final UserDTO userDTO) ;
 
-    public void delete(final Long id);
+    void delete(final Long id);
 
+    boolean usernameExists(String username);
+    boolean emailExists(final String email);
+    ReferencedWarning getReferencedWarning(final Long id);
 }

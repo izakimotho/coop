@@ -10,7 +10,7 @@ public class RabbitMQProducerServiceImpl implements RabbitMQProducerService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
     @Autowired
-    public void sendMessage(String message) {
-        rabbitTemplate.convertAndSend("customer_exchange", "", message);
+    public void sendMessage(String msg) {
+//        rabbitTemplate.convertAndSend("customer_exchange", "", msg);
     }
 }

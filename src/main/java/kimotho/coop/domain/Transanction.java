@@ -13,6 +13,8 @@ import kimotho.coop.enums.TransanctionType;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 
 @Entity
 @Table(name = "Transanctions")
@@ -26,8 +28,8 @@ public class Transanction extends BaseEntity {
     @Column
     private String transanctionDate;
 
-    @Column
-    private String amount;
+    @Column(columnDefinition = "NUMERIC(10,2)")
+    private BigDecimal  amount;
 
     @Column
     @Enumerated(EnumType.STRING)

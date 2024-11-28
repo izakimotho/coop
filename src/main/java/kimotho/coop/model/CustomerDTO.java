@@ -2,6 +2,8 @@ package kimotho.coop.model;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+
+import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +22,7 @@ public class CustomerDTO {
     private String phonenumber;
 
 
-    private double accountBalance=0.0;
+    private BigDecimal  accountBalance;
 
     @Size(max = 255)
     private String notes;
